@@ -1,0 +1,20 @@
+# 參數格式：參數名=起始,結束,間距
+# 整數與浮點數都支援
+
+DonLen=1,300,1
+ATRLen=1,100,1
+EMAWarmBars=1,100,1
+EntryBufferPts=1,300,1
+DonBufferPts=1,300,1
+MinATRD=1,300,1
+ATRStopK=0.01,3.00,0.01
+ATRTakeProfitK=0.01,3.00,0.01
+MaxEntriesPerDay=1,100,1
+TimeStopBars=1,300,1
+MinRunPctAnchor=0.01,1.00,0.01
+TrailStartPctAnchor=0.01,1.00,0.01
+TrailGivePctAnchor=0.01,1.00,0.01
+UseAnchorExit=0,1,1
+AnchorBackPct=0.01,1.00,0.01
+SysHistDBars=600,600,600
+SysHistMBars=20000,20000,20000

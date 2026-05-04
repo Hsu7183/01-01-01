@@ -1,0 +1,21 @@
+# 自動產生：本輪最佳策略參數固定檔
+# 格式：參數名=起始,結束,間距
+# 這份檔案會把每個參數鎖定在本輪最佳值，方便直接回填到 UI 再往下研究。
+
+DonLen=298,298,1
+ATRLen=8,8,1
+EMAWarmBars=9,9,1
+EntryBufferPts=84,84,1
+DonBufferPts=111,111,1
+MinATRD=188,188,1
+ATRStopK=0.51,0.51,0.01
+ATRTakeProfitK=0.59,0.59,0.01
+MaxEntriesPerDay=1,1,1
+TimeStopBars=57,57,1
+MinRunPctAnchor=0.27,0.27,0.01
+TrailStartPctAnchor=0.47,0.47,0.01
+TrailGivePctAnchor=0.8,0.8,0.01
+UseAnchorExit=0,0,1
+AnchorBackPct=0.01,0.01,0.01
+SysHistDBars=600,600,1
+SysHistMBars=20000,20000,1

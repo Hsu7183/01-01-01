@@ -1,0 +1,301 @@
+{
+  "mode": "smart",
+  "mode_label": "智慧搜尋",
+  "xs_path": "C:\\Users\\User\\Documents\\mqquant\\01\\bundle\\strategy\\1150415.xs",
+  "minute_path": "C:\\Users\\User\\Documents\\mqquant\\01\\bundle\\data\\M1.txt",
+  "daily_path": "C:\\Users\\User\\Documents\\mqquant\\01\\bundle\\data\\D1_XQ_TRUE.txt",
+  "script_name": "Uploaded_Strategy",
+  "ui_param_specs": [
+    {
+      "name": "DonLen",
+      "label": "1.Don長度",
+      "default": 274,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "ATRLen",
+      "label": "2.ATR長度",
+      "default": 2,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "EMAWarmBars",
+      "label": "3.EMA定錨回推日數",
+      "default": 1,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "EntryBufferPts",
+      "label": "4.NH/NL突破緩衝點數",
+      "default": 84,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "DonBufferPts",
+      "label": "5.Don突破緩衝點數",
+      "default": 117,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "MinATRD",
+      "label": "6.最小日ATR濾網",
+      "default": 127,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "ATRStopK",
+      "label": "7.ATR停損倍數",
+      "default": 0.57,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "ATRTakeProfitK",
+      "label": "8.ATR停利倍率",
+      "default": 0.81,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "MaxEntriesPerDay",
+      "label": "9.單日最多進場次數",
+      "default": 10,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "TimeStopBars",
+      "label": "10.時間停損Bars",
+      "default": 60,
+      "type": "int",
+      "enabled": true,
+      "start": 1,
+      "stop": 300,
+      "step": 1
+    },
+    {
+      "name": "MinRunPctAnchor",
+      "label": "11.時間停損最小發動(定錨%)",
+      "default": 0.22,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "TrailStartPctAnchor",
+      "label": "12.回吐停利啟動(定錨%)",
+      "default": 0.71,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "TrailGivePctAnchor",
+      "label": "13.回吐停利允許回吐(定錨%)",
+      "default": 0.02,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "UseAnchorExit",
+      "label": "14.是否啟用08:48定錨失敗出場",
+      "default": 1,
+      "type": "int",
+      "enabled": true,
+      "start": 0,
+      "stop": 1,
+      "step": 1
+    },
+    {
+      "name": "AnchorBackPct",
+      "label": "15.定錨失敗出場(定錨%)",
+      "default": 0.82,
+      "type": "float",
+      "enabled": true,
+      "start": 0.01,
+      "stop": 3.0,
+      "step": 0.01
+    },
+    {
+      "name": "SysHistDBars",
+      "label": "98.SysHistDBars",
+      "default": 600,
+      "type": "int",
+      "enabled": false,
+      "start": 600,
+      "stop": 600,
+      "step": 1
+    },
+    {
+      "name": "SysHistMBars",
+      "label": "99.SysHistMBars",
+      "default": 20000,
+      "type": "int",
+      "enabled": false,
+      "start": 20000,
+      "stop": 20000,
+      "step": 1
+    }
+  ],
+  "params_meta": [
+    {
+      "name": "DonLen",
+      "label": "1.Don長度",
+      "default": 274,
+      "type": "int"
+    },
+    {
+      "name": "ATRLen",
+      "label": "2.ATR長度",
+      "default": 2,
+      "type": "int"
+    },
+    {
+      "name": "EMAWarmBars",
+      "label": "3.EMA定錨回推日數",
+      "default": 1,
+      "type": "int"
+    },
+    {
+      "name": "EntryBufferPts",
+      "label": "4.NH/NL突破緩衝點數",
+      "default": 84,
+      "type": "int"
+    },
+    {
+      "name": "DonBufferPts",
+      "label": "5.Don突破緩衝點數",
+      "default": 117,
+      "type": "int"
+    },
+    {
+      "name": "MinATRD",
+      "label": "6.最小日ATR濾網",
+      "default": 127,
+      "type": "int"
+    },
+    {
+      "name": "ATRStopK",
+      "label": "7.ATR停損倍數",
+      "default": 0.57,
+      "type": "float"
+    },
+    {
+      "name": "ATRTakeProfitK",
+      "label": "8.ATR停利倍率",
+      "default": 0.81,
+      "type": "float"
+    },
+    {
+      "name": "MaxEntriesPerDay",
+      "label": "9.單日最多進場次數",
+      "default": 10,
+      "type": "int"
+    },
+    {
+      "name": "TimeStopBars",
+      "label": "10.時間停損Bars",
+      "default": 60,
+      "type": "int"
+    },
+    {
+      "name": "MinRunPctAnchor",
+      "label": "11.時間停損最小發動(定錨%)",
+      "default": 0.22,
+      "type": "float"
+    },
+    {
+      "name": "TrailStartPctAnchor",
+      "label": "12.回吐停利啟動(定錨%)",
+      "default": 0.71,
+      "type": "float"
+    },
+    {
+      "name": "TrailGivePctAnchor",
+      "label": "13.回吐停利允許回吐(定錨%)",
+      "default": 0.02,
+      "type": "float"
+    },
+    {
+      "name": "UseAnchorExit",
+      "label": "14.是否啟用08:48定錨失敗出場",
+      "default": 1,
+      "type": "int"
+    },
+    {
+      "name": "AnchorBackPct",
+      "label": "15.定錨失敗出場(定錨%)",
+      "default": 0.82,
+      "type": "float"
+    },
+    {
+      "name": "SysHistDBars",
+      "label": "98.SysHistDBars",
+      "default": 600,
+      "type": "int"
+    },
+    {
+      "name": "SysHistMBars",
+      "label": "99.SysHistMBars",
+      "default": 20000,
+      "type": "int"
+    }
+  ],
+  "runtime_settings": {
+    "cpu_limit_pct": 80,
+    "memory_limit_pct": 80,
+    "capital": 1000000,
+    "slip_per_side": 2.0,
+    "requested_workers": 8,
+    "effective_workers": 8,
+    "max_workers": 8,
+    "top_n": 10,
+    "seed_keep_count": 3
+  },
+  "hard_filters": {
+    "min_trades": 200,
+    "min_total_return": 0.0,
+    "max_mdd_pct": 20.0
+  },
+  "estimated_total": 4202
+}

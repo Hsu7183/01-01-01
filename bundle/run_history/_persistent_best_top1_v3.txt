@@ -1,0 +1,17 @@
+DonLen=274
+ATRLen=8
+EMAWarmBars=2
+EntryBufferPts=111
+DonBufferPts=74
+MinATRD=188
+ATRStopK=0.51
+ATRTakeProfitK=1.16
+MaxEntriesPerDay=2
+TimeStopBars=73
+MinRunPctAnchor=0.74
+TrailStartPctAnchor=0.39
+TrailGivePctAnchor=0.79
+UseAnchorExit=0
+AnchorBackPct=0.01
+SysHistDBars=600
+SysHistMBars=20000

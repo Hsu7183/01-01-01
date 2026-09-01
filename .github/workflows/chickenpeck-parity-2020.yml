@@ -24,8 +24,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Python version
-        run: python --version
+      - name: Runtime versions
+        run: |
+          python --version
+          node --version
       - name: Install numerical dependencies
         run: python -m pip install --quiet --disable-pip-version-check numpy pandas numba
       - name: Inspect M1
@@ -34,6 +36,14 @@ jobs:
         run: python research/chickenpeck_parity_2020/apply_mother_contract_patch.py
       - name: Run causal parity research
         run: python research/chickenpeck_parity_2020/run_research.py
+      - name: Fetch and patch single-trades.js
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/Hsu7183/starlift-single-rr/main/single-trades.js \
+            --output research/chickenpeck_parity_2020/single-trades.original.js
+          python research/chickenpeck_parity_2020/patch_single_trades.py
+      - name: Calculate KPI with exact single-trades.js functions
+        run: node research/chickenpeck_parity_2020/kpi_from_single_trades.js
       - name: Upload research outputs
         uses: actions/upload-artifact@v4
         with:
@@ -42,4 +52,6 @@ jobs:
             research/chickenpeck_parity_2020/output/**
             research/chickenpeck_parity_2020/inspection.txt
             research/chickenpeck_parity_2020/run_research.py
+            research/chickenpeck_parity_2020/single-trades.original.js
+            research/chickenpeck_parity_2020/single-trades.patched.js
           if-no-files-found: error

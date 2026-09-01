@@ -1,0 +1,35 @@
+name: ChickenPeck parity 2020 research
+
+on:
+  push:
+    branches:
+      - research/chickenpeck-parity-2020-20260901
+    paths:
+      - 'research/chickenpeck_parity_2020/**'
+      - '.github/workflows/chickenpeck-parity-2020.yml'
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Python version
+        run: python --version
+      - name: Inspect M1
+        run: python research/chickenpeck_parity_2020/inspect_m1.py
+      - name: Upload inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: chickenpeck-m1-inspection
+          path: research/chickenpeck_parity_2020/inspection.txt
+          if-no-files-found: error

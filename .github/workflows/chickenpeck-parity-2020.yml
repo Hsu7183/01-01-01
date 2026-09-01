@@ -43,7 +43,9 @@ jobs:
             --output research/chickenpeck_parity_2020/single-trades.original.js
           python research/chickenpeck_parity_2020/patch_single_trades.py
       - name: Calculate KPI with exact single-trades.js functions
-        run: node research/chickenpeck_parity_2020/kpi_from_single_trades.js
+        run: |
+          python research/chickenpeck_parity_2020/patch_kpi_harness.py
+          node research/chickenpeck_parity_2020/kpi_from_single_trades.js
       - name: Upload research outputs
         uses: actions/upload-artifact@v4
         with:

@@ -8,6 +8,10 @@ on:
       - 'research/chickenpeck_parity_2020/**'
       - '.github/workflows/chickenpeck-parity-2020.yml'
 
+concurrency:
+  group: chickenpeck-parity-2020-final
+  cancel-in-progress: true
+
 permissions:
   contents: read
 

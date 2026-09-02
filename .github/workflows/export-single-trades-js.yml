@@ -1,0 +1,30 @@
+name: Export single-trades.js
+
+on:
+  push:
+    branches:
+      - research/chickenpeck-profit5-20260902
+    paths:
+      - '.github/workflows/export-single-trades-js.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch exact KPI engine
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/Hsu7183/starlift-single-rr/main/single-trades.js \
+            --output single-trades.js
+          sha256sum single-trades.js
+      - name: Upload exact KPI engine
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-single-trades-js
+          path: single-trades.js
+          if-no-files-found: error

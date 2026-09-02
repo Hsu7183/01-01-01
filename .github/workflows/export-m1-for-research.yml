@@ -1,0 +1,33 @@
+name: Export M1 research data
+
+on:
+  push:
+    branches:
+      - research/chickenpeck-profit5-20260902
+    paths:
+      - '.github/workflows/export-m1-for-research.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Verify dataset
+        run: |
+          wc -l bundle/data/M1.txt
+          sha256sum bundle/data/M1.txt
+          head -n 2 bundle/data/M1.txt
+          tail -n 2 bundle/data/M1.txt
+      - name: Upload M1 dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: chickenpeck-m1-2020-2026
+          path: bundle/data/M1.txt
+          if-no-files-found: error
+          compression-level: 6
